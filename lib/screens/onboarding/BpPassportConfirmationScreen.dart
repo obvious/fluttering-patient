@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:patient/PreferenceHelper.dart';
+import 'package:patient/screens/onboarding/ScanQrScreen.dart';
 
 class BpPassportConfirmationScreen extends StatelessWidget {
   @override
@@ -51,7 +53,12 @@ class BpPassportConfirmationScreen extends StatelessWidget {
                         horizontal: 16.0,
                       ),
                       onPressed: () async {
-                        // ToDo: Set Bp Passport given
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => ScanQrScreen()
+                          ),
+                        );
                         await PreferenceHelper.setPassportAvailability(true);
                       },
                       child: Text(
@@ -101,9 +108,10 @@ class BpPassportConfirmationScreen extends StatelessWidget {
                                 "Sorry, Simple is only available for patients with BP Passports. "
                                 "Please come back in a few weeks when it is available for anyone!",
                                 style: TextStyle(
-                                    height: 1.5,
-                                    fontSize: 18,
-                                    color: Colors.black54),
+                                  height: 1.5,
+                                  fontSize: 18,
+                                  color: Colors.black54,
+                                ),
                               ),
                             ));
                       },
