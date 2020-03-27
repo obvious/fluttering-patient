@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:patient/PreferenceHelper.dart';
 import 'package:patient/screens/onboarding/BpPassportConfirmationScreen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatelessWidget {
   static const _titleStyle = TextStyle(
@@ -145,10 +143,9 @@ class SplashScreen extends StatelessWidget {
                     horizontal: 16.0,
                   ),
                   onPressed: () {
-                    // ToDo: Navigate to bp-passport screen
                     Navigator.push(
                       context,
-                      CupertinoPageRoute(
+                      MaterialPageRoute(
                         builder: (context) => BpPassportConfirmationScreen(),
                       ),
                     );

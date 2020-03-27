@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:patient/screens/onboarding/BpPassportConfirmationScreen.dart';
 import 'package:patient/screens/onboarding/SplashScreen.dart';
 
 void main() => runApp(MyApp());
